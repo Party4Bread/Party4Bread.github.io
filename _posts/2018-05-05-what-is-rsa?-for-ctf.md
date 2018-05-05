@@ -3,13 +3,13 @@ layout: post
 title: "What is RSA? - 공개키 암호"
 date: 2018-05-05 14:44:02
 image: 'https://pbs.twimg.com/profile_images/804024608856932352/kkDHoUWV_400x400.jpg'
-description:RSA가 뭔지 알아보자.
+description: RSA가 뭔지 알아보자.
 category: 'Cryptography'
 tags:
 - RSA
 - CTF
 twitter_text:
-introduction:아니 도데체가 CTF에서 RSA, RSA거리던데 그게 뭔 말이냐?
+introduction: 아니 도데체가 CTF에서 RSA, RSA거리던데 그게 뭔 말이냐?
 ---
 
 
