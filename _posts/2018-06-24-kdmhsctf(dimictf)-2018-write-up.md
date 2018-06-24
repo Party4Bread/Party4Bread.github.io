@@ -2,7 +2,7 @@
 layout: post
 title: "KDMHSCTF(dimictf) 2018 Write UP"
 date: 2018-06-24 17:00:07
-image: '/assets/img/nani.png'
+image: '/assets/img/houseelf/nani.png'
 description: dimictf Write UP
 category: 'Write UP'
 tags:
@@ -20,11 +20,11 @@ introduction: dimictf 2018 8th Write UP
 `5시간 참여 / 고등부 8위 / 5620P / Played as two steps from haven `
 
 
-##PWN
+## PWN
 
 `??? : 말도안돼 P4B가 포너블을 풀다니`
 
-###init(580p)
+### init(580p)
 
 바이너리도 안보고 풀었다.
 
@@ -50,7 +50,7 @@ Do you want to do?
 >>> 
 ```
 
-![엩....](/assets/img/seemslegit.png)
+![엩....](/assets/img/houseelf/seemslegit.png)
 
 그렇구나 ㅎ....
 
@@ -187,7 +187,7 @@ dimi{ca1cul4t3d_inv3rs3?_0r_us3d_z3?_0h_y0u_ar3_4_F0Ol_;)}
 
 다른 더 쉬운 방법이 있던걸까.... ㅡㅡ
 
-###Challenger(980p)
+### Challenger(980p)
 
 디스어셈블리도 제대로 되질않아서 그냥 입력 값을 넣는 메모리주소에 모두 하드웨어 브레이크 포인트를 rwx로 걸고 천천히 디버깅 해나가니 약간씩 소스코드가 보이기 시작했다.
 
@@ -221,7 +221,7 @@ x864:Here_Comes_A_NEW_Challenger
 
 힌트로 나온 링크는.... 봤긴했지만...
 
-![전혀 모르겠다](/assets/img/idkrlry.png)
+![전혀 모르겠다](/assets/img/houseelf/idkrlry.png)
 
 ## MISC
 
@@ -243,7 +243,7 @@ flag.png 라는 파일가 있는데..... 당신 누구야?
 
 ~~**???:ida에서 열었는데 소스가안보여**~~ 
 
-![와 고건 몰랐네....](/assets/img/wellidkthat.png)
+![와 고건 몰랐네....](/assets/img/houseelf/wellidkthat.png)
 
 아무튼 메모장으로 여니까 `8Xk4HCc` 라는게 나와서 준것도 이미지파일이고해서 이미지 공유 사이트가면 있지않을까해서 imgur에 넣어보니...
 
