@@ -12,6 +12,9 @@ tags:
 twitter_text:
 introduction: dimictf 2018 8th Write UP
 ---
+
+
+
 # KDMHSCTF(dimictf) 2018 W-P
 
 `5시간 참여 / 고등부 8위 / 5620P / Played as two steps from haven `
