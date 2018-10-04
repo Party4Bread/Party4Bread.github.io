@@ -46,7 +46,7 @@ POSTPATH="${BINPATH}/_posts"
 DIST_FOLDER="$POSTPATH"
 
 # Set your blog URL
-BLOG_URL="https://www.rossener.com/"
+BLOG_URL="https://party4bread.github.io/"
 
 # Set your assets URL
 ASSETS_URL="assets/img/"
