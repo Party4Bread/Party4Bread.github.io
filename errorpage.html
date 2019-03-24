@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300" rel="stylesheet"> 
+    <style>
+        html,body{
+            height: 100vh;
+            background-color: #263238;
+        }
+        td{
+            font-family: "Roboto Mono";
+            font-size: 5vw;
+            text-align: center;                        
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex;justify-content:center;align-items:center;height: 100vh;margin-top: -5vh">
+        <div class="container">
+            <table id="here">
+    
+            </table>        
+        </div>
+    </div>
+    <script>
+        var cd="45001234"
+        var zt="NOTFIOUMPLEMENTERNALSBADGATERVWAYTICMERERROUNAUTHORVAILABAIZLEDRDEQUESTN";
+        //var zt="BNotImplemeFounternalSadGatervwayTicmeUnaFrErrouthorvailabizledRdequestn"
+        var w=24;
+        var tb=document.getElementById("here");
+        var idxidx
+        var elemarr=[];
+        var cdarr=[];
+
+        function getSearchParameters() {
+            var prmstr = window.location.search.substr(1);
+            return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+        }
+
+        function transformToAssocArray( prmstr ) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for ( var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+
+        var params = getSearchParameters();
+        console.log(params)
+        var errcode="404";
+        if(params["error"])errcode=params["error"];
+        var errdesc={
+            "400":'BADREQUEST',
+            "401":'UNAUTHORIZED',
+            "403":'FORBIDDEN', 
+            "404":'NOTFOUND',
+            "500":'INTERNALSERVERERROR',
+            "501":'NOTIMPLEMENTED',
+            "502":'BADGATEWAY',
+            "503":'SERVICEUNAVAILABLE',
+            "504":'GATEWAYTIMEOUT'
+        }
+
+
+        var r=document.createElement("tr"); 
+        for(var j=0;j<cd.length;j++){
+            var k = document.createElement("td");
+            k.innerText=cd[j];
+            r.appendChild(k);
+            cdarr.push(k);
+        }
+        tb.appendChild(r)
+
+        for(var i = 0; i<zt.length/w;i++){
+            var r=document.createElement("tr");
+            for(var j=0;j<w;j++){
+                var k = document.createElement("td");
+                k.innerText=zt[i*w+j];
+                r.appendChild(k);
+                elemarr.push(k);
+            }
+            tb.appendChild(r)
+        }       
+
+        var numidx=0;
+        for(var i=0;i<cdarr.length;i++){
+            if(cdarr[i].innerText==errcode[numidx]){
+                cdarr[i].style="color:white"
+                numidx++;
+            }else{
+                cdarr[i].style="color:#4f5b62"
+            }
+        }       
+
+        var erridx=0;
+        for(var i=0;i<elemarr.length;i++){
+            if(elemarr[i].innerText==errdesc[errcode][erridx]){
+                elemarr[i].style="color:white"
+                erridx++;
+            }else{
+                elemarr[i].style="color:#4f5b62"
+            }
+        }
+    </script>
+</body>
+</html>
