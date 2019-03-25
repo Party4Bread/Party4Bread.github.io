@@ -13,7 +13,7 @@
         }
         td{
             font-family: "Roboto Mono";
-            font-size: 5vw;
+            font-size: 5vmax;
             text-align: center;                        
         }
     </style>
@@ -30,12 +30,13 @@
         var cd="45001234"
         var zt="NOTFIOUMPLEMENTERNALSBADGATERVWAYTICMERERROUNAUTHORVAILABAIZLEDRDEQUESTN";
         //var zt="BNotImplemeFounternalSadGatervwayTicmeUnaFrErrouthorvailabizledRdequestn"
-        var w=24;
+        var warr=[9,12,18,24];
         var tb=document.getElementById("here");
         var idxidx
+        var rowarr=[];
         var elemarr=[];
         var cdarr=[];
-
+//1:72 2:36 3:24 4:18 6:12 8:9
         function getSearchParameters() {
             var prmstr = window.location.search.substr(1);
             return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
@@ -66,6 +67,42 @@
             "503":'SERVICEUNAVAILABLE',
             "504":'GATEWAYTIMEOUT'
         }
+        var prevwidx=0;
+        function makescreen(w){
+            while(rowarr.length>0)rowarr.pop().remove();
+            elemarr=[];
+            for(var i = 0; i<zt.length/w;i++){
+                var r=document.createElement("tr");
+                for(var j=0;j<w;j++){
+                    var k = document.createElement("td");
+                    k.innerText=zt[i*w+j];
+                    r.appendChild(k);
+                    elemarr.push(k);
+                }
+                tb.appendChild(r)
+                rowarr.push(r);
+            }       
+
+            var erridx=0;
+            for(var i=0;i<elemarr.length;i++){
+                if(elemarr[i].innerText==errdesc[errcode][erridx]){
+                    elemarr[i].style="color:white"
+                    erridx++;
+                }else{
+                    elemarr[i].style="color:#4f5b62"
+                }
+            }
+        }
+        
+        window.addEventListener('resize',function(){            
+            var widx=Math.floor((window.innerWidth/ window.innerHeight)*3)-1;
+            widx = Math.min(widx,3);
+            widx = Math.max(widx,0);            
+            if(prevwidx!=widx){
+                makescreen(warr[widx]);
+                prevwidx=widx;
+            }
+        })
 
 
         var r=document.createElement("tr"); 
@@ -77,17 +114,6 @@
         }
         tb.appendChild(r)
 
-        for(var i = 0; i<zt.length/w;i++){
-            var r=document.createElement("tr");
-            for(var j=0;j<w;j++){
-                var k = document.createElement("td");
-                k.innerText=zt[i*w+j];
-                r.appendChild(k);
-                elemarr.push(k);
-            }
-            tb.appendChild(r)
-        }       
-
         var numidx=0;
         for(var i=0;i<cdarr.length;i++){
             if(cdarr[i].innerText==errcode[numidx]){
@@ -98,15 +124,11 @@
             }
         }       
 
-        var erridx=0;
-        for(var i=0;i<elemarr.length;i++){
-            if(elemarr[i].innerText==errdesc[errcode][erridx]){
-                elemarr[i].style="color:white"
-                erridx++;
-            }else{
-                elemarr[i].style="color:#4f5b62"
-            }
-        }
+        var widx=Math.floor((window.innerWidth/ window.innerHeight)*3)-1;
+        widx = Math.min(widx,3);
+        widx = Math.max(widx,0);            
+        prevwidx=widx;
+        makescreen(warr[widx]);
     </script>
 </body>
 </html>
