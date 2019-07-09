@@ -3,7 +3,7 @@ title: Haven 4 BREAD
 email: party4bread@gmail.com
 description: Some text about your blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://party4bread.github.io" # the base hostname & protocol for your site
+url: "http://myblog.isnt.site" # the base hostname & protocol for your site
 google_analytics: "UA-118293925-1"
 
 # User Settings
