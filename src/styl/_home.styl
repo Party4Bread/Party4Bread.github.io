@@ -8,8 +8,8 @@ main
 
 .row
     center(100%)
-    margin 0px 10px
-    
+    margin 0px rem(rowMargin)
+
 .flex-grid
     display flex
     flex-flow row wrap
@@ -22,7 +22,7 @@ main
     padding 0 rem(15px)
 
 .box-item
-    flex 1 0 300px
+    flex 1 0 itemMinWidth
     margin 0 0 rem(30px)
     display inline-block
     min-height rem(285px)
@@ -30,7 +30,16 @@ main
     position relative
     z-index 1
     +above(cut)
-        margin 0 rem(15px) rem(30px)
+        margin 0 rem(itemMargin) rem(30px)
+    // Note 1: This complex calc right here is what make the leftover box items
+    // have the same width than their siblings.
+    for n in (2..maxItemsPerRow)
+        resolution = (2 * rowMargin) + (n * itemMinWidth)
+        +above(resolution)
+            max-width "calc(100%/%s - %s)" % (n itemMargin * 2)
+    // Note 2: This set the maximum number of box items per row.
+    +above((2 * rowMargin) + (maxItemsPerRow * itemMinWidth))
+        flex 1 0 "calc(100%/%s - %s)" % (maxItemsPerRow itemMargin * 2)
     &:hover
         z-index 2
         transform scale(1.1)
