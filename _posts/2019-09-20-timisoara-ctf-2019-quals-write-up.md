@@ -11,6 +11,7 @@ tags:
 - Reversing
 - Algorithm
 twitter_text:
+use_math: true
 introduction: 이미 사라진 대회입니다.
 ---
 # Timisoara CTF 2019 Quals Write UP
@@ -43,7 +44,7 @@ encryptor = AES.new(key[:16], AES.MODE_CBC, iv)
 print(encryptor.decrypt(aaa))
 ```
 
-##3 magic numbers (300pts)
+## 3 magic numbers (300pts)
 
 Description에서 굳이 중국인을 언급한걸을 보아서 중국인 나머지 정리를 써야 할꺼 같네요. 
 
