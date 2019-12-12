@@ -1,9 +1,9 @@
 # Site Settings
-#=include site.yml
+=include site.yml
 
 # Social Media Settings
 # Remove the item if you don't need it
-#=include social.yml
+=include social.yml
 
 # Theme Settings
 #=include theme.yml
