@@ -1,84 +1,90 @@
 # Site Settings
-#name: Haven 4 BREAD
-#title: Haven 4 BREAD | P4B's blog
-#email: party4bread@gmail.com
-#description: Party4Bread's blog. Usally bloging about dev things.
-#
-## User Settings
-#username: Party4Bread
-#user_description: High School Student, Interested in Crypto, Forensic, Reversing, .NET, Android, ML and Web
-#disqus_username: Party4Bread
-#show_hero: true
-#
-## Social Media Settings
-## Remove the item if you don't need it
-#github_username: Party4Bread
-#
-#
-## Theme Settings
-#themeColor: "#ff0a16"
-#primaryDark: "#141414"
-#accentDark: "#ffffff"
-#lightGray: "#f2f2f2"
-#texts: "#333333"
-#
-#
-## Posts Settings
-#show_time_bar: true
-#show_modal_on_exit: false
-#show_modal_on_finish_post: true
-#two_columns_layout: true
-#
-#
-## Advanced Settings
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "http://myblog.isnt.site" # the base hostname & protocol for your site
-#google_analytics: "UA-118293925-1"
-#language: "en"
-#
-#
-## Build settings
-#markdown: kramdown
-#highlighter: rouge
-#permalink: /:title/
-#collections:
-#  authors:
-#    output: true
-#paginate_path: "/page/:num/"
-#
-## Content paginator
-#paginate_content:
-#  enabled: true
-#  debug: false
-#  collections:
-#    - posts
-#  auto: false
-#  separator: "--page-break--"
-#  permalink: "/:num/"
-#  seo_canonical: true
-#  properties:
-#    part:
-#      is_generated: true
-#    last:
-#      is_generated: true
-#    single:
-#      is_generated: true
-#
-## Plugins
-#plugins:
-#  - jekyll-paginate
-#  - jekyll-paginate-content
-#
-## Exclude my node related stuff
-#exclude: [
-#  'package.json',
-#  'package-lock.json',
-#  'src',
-#  'node_modules',
-#  'initpost.sh',
-#  'Gemfile',
-#  'Gemfile.lock',
-#  'gulpfile.js',
-#  'README.md'
-#]
-#
+name: Haven 4 BREAD
+title: Haven 4 BREAD | P4B's blog
+description: Party4Bread's blog. Usally bloging about dev things.
+tags:
+  - blog
+  - development
+  - ctf
+  - reversing
+email: party4bread@gmail.com
+disqus_username: party4bread
+show_hero: true
+# paginate: 12
+
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: party4bread
+facebook_username: lee.deun.sol.p4b
+twitter_username: haven4someone
+instagram_username: instagram_username
+linkedin_username: unrevivable_dedication
+#medium_username: medium_username
+
+
+# Theme Settings
+themeColor: "#ff0a16"
+primaryDark: "#141414"
+accentDark: "#ffffff"
+lightGray: "#f2f2f2"
+texts: "#333333"
+
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: false
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-118293925-1"
+language: "ko"
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+
+# Exclude my node related stuff
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]
