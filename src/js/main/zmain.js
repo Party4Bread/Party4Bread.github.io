@@ -12,6 +12,17 @@
     $(".overlay").removeClass("show");
   });
 
+  // Header
+  $(window).scroll(function () {
+    var top = $(this).scrollTop();
+    if (top > 0) {
+      $("body").addClass("light");
+    }
+    else {
+      $("body").removeClass("light");
+    }
+  });
+
   // Modals
 
   var $closeBtn = $('.modal .close');
@@ -74,7 +85,7 @@
   smoothScroll.init({
       selectorHeader: '.bar-header', // Selector for fixed headers (must be a valid CSS selector)
       speed: 500, // Integer. How fast to complete the scroll in milliseconds
-      updateURL: false, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+      updateURL: false // Boolean. Whether or not to update the URL with the anchor hash on scroll
   });
 
 })( Zepto, window );

@@ -9,4 +9,12 @@ tags:
 email: party4bread@gmail.com
 disqus_username: party4bread
 show_hero: true
-# paginate: 12
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+  - title: Feed
+    url: /feed.xml
