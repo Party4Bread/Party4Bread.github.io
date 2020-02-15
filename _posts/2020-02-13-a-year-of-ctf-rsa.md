@@ -68,14 +68,12 @@ def factor(n):
 
 소인수 분해는 무려 [포럼](https://www.mersenneforum.org/forumdisplay.php?f=19)도 있습니다. 한번 확인해 보시면 더 빠르게 인수 분해 하는 법도 종종 나오고는 합니다.
 
-### p나 q가 미심적을 경우 (p,q에 인접한 수가 smooth수 일 경우)
+### p,q에 인접한 수가 smooth수 일 경우
 
 [RBTree님의 글](http://www.secmem.org/blog/2019/10/20/Smooth-number-and-Factorization/
 ) 에 잘 나와있습니다.
 
-요약을 하자면 $p-1$이나 $q-1$중 하나가 [B-powersmooth](https://en.wikipedia.org/wiki/Smooth_number#Powersmooth_numbers)면 Pollard’s p-1 알고리즘을 사용하면
-
-$p+1$이나 $q+1$중 하나가 [smooth](https://en.wikipedia.org/wiki/Smooth_number)하면 Williams's p + 1 알고리즘으로 비교적 효율적으로 풀어낼 수 있습니다.
+요약을 하자면 $p-1$이나 $q-1$중 하나가 [B-powersmooth](https://en.wikipedia.org/wiki/Smooth_number#Powersmooth_numbers)면 Pollard’s p-1 알고리즘을 사용하면 효율적으로 인수 분해 하는것이 가능하고, $p+1$이나 $q+1$중 하나가 [smooth](https://en.wikipedia.org/wiki/Smooth_number)하면 Williams's p + 1 알고리즘으로 비교적 효율적으로 풀어낼 수 있습니다.
 
 ### pq에 0이 많을 경우
 
