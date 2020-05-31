@@ -38,6 +38,8 @@
     {% if page.tags %}
         <meta name="keywords" content="{{ page.tags | join: ', ' }}">
     {% endif %}
+    
+    {% include mathjax_support.html %}
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">

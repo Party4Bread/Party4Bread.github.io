@@ -1,15 +1,14 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
+name: Haven 4 BREAD
+title: Haven 4 BREAD | P4B's blog
+description: Party4Bread's blog. Usally bloging about dev things.
 tags:
   - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
-email: youremail@xyz.com
-disqus_username: disqus_username
+  - development
+  - ctf
+  - reversing
+email: party4bread@gmail.com
+disqus_username: p4bblog
 show_hero: true
 menu:
   - title: Home
@@ -21,29 +20,28 @@ menu:
   - title: Feed
     url: /feed.xml
 
-
 # Social Media Settings
 # Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
+github_username: party4bread
+facebook_username: lee.deun.sol.p4b
+twitter_username: haven4someone
 instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
+linkedin_username: unrevivable_dedication
+#medium_username: medium_username
 
 
 # Posts Settings
 show_time_bar: true
 show_modal_on_exit: false
 show_modal_on_finish_post: true
-two_columns_layout: true
+two_columns_layout: false
 
 
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
-language: "en"
+google_analytics: "UA-118293925-1"
+language: "ko"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
 

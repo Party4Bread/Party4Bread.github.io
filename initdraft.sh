@@ -2,20 +2,20 @@
 
 # ------------------------------------------------------------------------------
 #
-# Program: initpost.sh
-# Author:  Vitor Britto
-# Description: script to create an initial structure for my posts.
+# Program: initdraft.sh
+# Author:  Thiago Rossener
+# Description: script to create an initial structure for my drafts.
 #
-# Usage: ./initpost.sh [options] <post name>
+# Usage: ./initdraft.sh [options] <draft name>
 #
 # Options:
 #   -h, --help        output instructions
 #   -c, --create      create post
 #
-# Alias: alias newpost="bash ~/path/to/script/initpost.sh"
+# Alias: alias newdraft="bash ~/path/to/script/initdraft.sh"
 #
 # Example:
-#   ./initpost.sh -c How to replace strings with sed
+#   ./initdraft.sh -c How to replace strings with sed
 #
 # Important Notes:
 #   - This script was created to generate new markdown files for my blog.
@@ -42,11 +42,11 @@ FILE_NAME="${CURRENT_DATE}-${POST_NAME}.md"
 
 # Set your destination folder
 BINPATH=$(cd `dirname $0`; pwd)
-POSTPATH="${BINPATH}/_posts"
+POSTPATH="${BINPATH}/_drafts"
 DIST_FOLDER="$POSTPATH"
 
 # Set your blog URL
-BLOG_URL="http://myblog.isnt.site/"
+BLOG_URL="https://party4bread.github.io/"
 
 # Set your assets URL
 ASSETS_URL="assets/img/"
@@ -85,21 +85,21 @@ e_warning() {
 # ------------------------------------------------------------------------------
 
 # Everybody need some help
-initpost_help() {
+initdraft_help() {
 
 cat <<EOT
 ------------------------------------------------------------------------------
-INIT POST - A shortcut to create an initial structure for my posts.
+INIT DRAFT - A shortcut to create an initial structure for my drafts.
 ------------------------------------------------------------------------------
-Usage: ./initpost.sh [options] <post name>
+Usage: ./initdraft.sh [options] <post name>
 Options:
   -h, --help        output instructions
   -c, --create      create post
 Example:
-  ./initpost.sh -c How to replace strings with sed
+  ./initdraft.sh -c How to replace strings with sed
 Important Notes:
   - This script was created to generate new text files to my blog.
-Copyright (c) Vitor Britto
+Copyright (c) Thiago Rossener
 Licensed under the MIT license.
 ------------------------------------------------------------------------------
 EOT
@@ -107,30 +107,28 @@ EOT
 }
 
 # Initial Content
-initpost_content() {
+initdraft_content() {
 
 echo "---"
-echo "date: ${CURRENT_DATE} ${TIME}"
 echo "layout: post"
 echo "title: \"${POST_TITLE}\""
-echo "subtitle:"
+echo "date: ${CURRENT_DATE} ${TIME}"
+echo "image: ''"
 echo "description:"
-echo "image:"
-echo "optimized_image:"
-echo "category:"
+echo "category: ''"
 echo "tags:"
-echo "author:"
-echo "paginate: false"
+echo "twitter_text:"
+echo "introduction:"
 echo "---"
 
 }
 
 # Create file
-initpost_file() {
+initdraft_file() {
     if [ ! -f "$FILE_NAME" ]; then
         e_header "Creating template..."
-        initpost_content > "${DIST_FOLDER}/${FILE_NAME}"
-        e_success "Initial post successfully created!"
+        initdraft_content > "${DIST_FOLDER}/${FILE_NAME}"
+        e_success "Initial draft successfully created!"
     else
         e_warning "File already exist."
         exit 1
@@ -148,13 +146,13 @@ main() {
 
     # Show help
     if [[ "${1}" == "-h" || "${1}" == "--help" ]]; then
-        initpost_help ${1}
+        initdraft_help ${1}
         exit
     fi
 
     # Create
     if [[ "${1}" == "-c" || "${1}" == "--create" ]]; then
-        initpost_file $*
+        initdraft_file $*
         exit
     fi
 
