@@ -1,5 +1,5 @@
 ---
-date: 2020-06-01 00:10:57
+date: 2020-06-01T00:10:57.000Z
 layout: post
 title: Android Q System UI Wallpaper Crash는 왜죠
 subtitle: TL;DR 색변환이 요상한 ICC Profile과 하모니를 이뤄 의도치 않은 값을 만들어 냅니다.
@@ -30,7 +30,7 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: length=256; index=256
 ...
 ```
 
-## Log analyze
+## Log analysis
 
 해당 오류는 [ImageProcessHelper의 getHistogram함수](https://android.googlesource.com/platform/frameworks/base/+/master/packages/SystemUI/src/com/android/systemui/glwallpaper/ImageProcessHelper.java#139d)에서 발생하고 있고 해당 함수는 다음과 같이 생겼습니다.
 
@@ -53,11 +53,11 @@ private int[] getHistogram(Bitmap grayscale) {
 
 histogram배열이 256길이인데 257번째 요소를 접근하려해서 발생하는 크래시 입니다.
 
-## Source analyze
+## Source analysis
 
 getHistogram 함수가 크래시가 발생할때는 [toGrayscale 함수](https://android.googlesource.com/platform/frameworks/base/+/master/packages/SystemUI/src/com/android/systemui/glwallpaper/ImageProcessHelper.java#115)를 거쳐서 그레이스케일로 변환된 이미지를 처리하는데 RGB값의 총합이 256이 될때 발생합니다. 이 toGrayscale 함수는 [LUMINOSITY_MATRIX](https://android.googlesource.com/platform/frameworks/base/+/master/packages/SystemUI/src/com/android/systemui/glwallpaper/ImageProcessHelper.java#47)를 통해 ColorFilter를 하여 원본 이미지를 그레이스케일로 만듭니다. 이렇게 변환된 이미지에서 만약 RGB의 합이 256이 된다면 버그를 재현할 수 있습니다.
 
-## Reproduce
+## Reproduction
 
 원본 이미지에서 문제의 픽셀을 찾아본 결과 RGB가 (255,255,243)일때 Grayscale이 (55,183,18)이 되어서 발생하는데 직접 만든 이미지로 (255,255,243)를 넣었을때는 크래시가 생기지 않고 Grayscale이 (54,182,18)이나 255이 넘지않게 되어 버그가 발생하지 않지만 문제가 된 이미지의 ICC Profile인 `Google/Skia/E3CADAB7BD3DE5E3436874D2A9DEE126`로 색을 다시 매핑했더니 Grayscale 이 (55,183,18)되어 크래시가 발생했습니다.
 
