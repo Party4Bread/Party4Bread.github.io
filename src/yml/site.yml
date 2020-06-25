@@ -10,7 +10,6 @@ tags:
   - cryptography
   - dev
 show_hero: true
-paginate: -1
 menu:
   - title: Home
     url: /
