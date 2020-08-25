@@ -1,5 +1,5 @@
 ---
-date: '2020-02-14 01:09:13'
+date: 2020-02-14 01:09:13
 layout: post
 title: A year of CTF RSA
 subtitle: 1년정도 CTF 뉴비로 있으면서 (아직도 뉴비지만) 겪었던 RSA 문제들의 유형을 대략 정리했습니다.
@@ -69,11 +69,11 @@ def factor(n):
 소인수 분해는 무려 [포럼](https://www.mersenneforum.org/forumdisplay.php?f=19)도 있습니다. 한번 확인해 보시면 더 빠르게 인수 분해 하는 법도 종종 나오고는 합니다.
 
 ### p,q에 인접한 수가 smooth수 일 경우
-
-[RBTree님의 글](http://www.secmem.org/blog/2019/10/20/Smooth-number-and-Factorization/
-) 에 잘 나와있습니다.
 
-요약을 하자면 $p-1$이나 $q-1$중 하나가 [B-powersmooth](https://en.wikipedia.org/wiki/Smooth_number#Powersmooth_numbers)면 Pollard’s p-1 알고리즘을 사용하면 효율적으로 인수 분해 하는것이 가능하고, $p+1$이나 $q+1$중 하나가 [smooth](https://en.wikipedia.org/wiki/Smooth_number)하면 Williams's p + 1 알고리즘으로 비교적 효율적으로 풀어낼 수 있습니다.
+[RBTree님의 글](http://www.secmem.org/blog/2019/10/20/Smooth-number-and-Factorization/) 에 잘 나와있습니다.
+
+요약을 하자면 $p-1$이나 $q-1$중 하나가 [B-powersmooth](https://en.wikipedia.org/wiki/Smooth_number#Powersmooth_numbers)면 Pollard’s p-1 알고리즘을 사용하면
+ 효율적으로 인수 분해 하는것이 가능하고, $p+1$이나 $q+1$중 하나가 [smooth](https://en.wikipedia.org/wiki/Smooth_number)하면 Williams's p + 1 알고리즘으로 비교적 효율적으로 풀어낼 수 있습니다.
 
 ### pq에 0이 많을 경우
 
@@ -164,3 +164,8 @@ $C^{s_1}_B∗C^{s^2}_C=(M^{e_B})^{s_1}∗(M^{e_C})^{s_2}=M^{e_Bs_1}∗M^{e_Cs_2}
 ### ROCA
 
 정말 드물지만 [CVE-2017-15361](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15361)가 문제로 나옵니다. PoC를 찾아서 풉시다.
+
+### RSA Puzzle
+일부 파라미터를 변형시켜서 고의로 노출시키는 경우입니다. 현실에서는 거의 없지만 PS로는 적절한거같기도 합니다.
+[RBTree님의 글](http://www.secmem.org/blog/2020/07/19/RSA-Puzzles/)에 몇몇 풀이 접근방식이 있습니다. 거의 정수론문제라고 봐도 무방합니다.
+
