@@ -21,6 +21,8 @@ paginate: false
 
 ### p와 q가 상당히 인접할 경우
 
+사실 p,q를 모르고 인접한지 알아내기는 쉽지않습니다. 한번 돌려보세요.
+
 페르마의 인수 분해법을 사용하면됩니다.
 
 페르마의 인수 분해법은 어떤 홀수 $N$을  $N=a^2-b^2$처럼 [정수 제곱수의 차로 표현](https://en.wikipedia.org/wiki/Difference_of_two_squares) 할 수 있는것에 기반하고 있는데 이때 이 식을 한번 더 펼쳐서 $N=(\frac {c+d}2)^2-(\frac {c-d}2)^2$로 만들면 $N =cd$임을 알 수 있습니다.
@@ -166,6 +168,6 @@ $C^{s_1}_B∗C^{s^2}_C=(M^{e_B})^{s_1}∗(M^{e_C})^{s_2}=M^{e_Bs_1}∗M^{e_Cs_2}
 정말 드물지만 [CVE-2017-15361](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15361)가 문제로 나옵니다. PoC를 찾아서 풉시다.
 
 ### RSA Puzzle
+
 일부 파라미터를 변형시켜서 고의로 노출시키는 경우입니다. 현실에서는 거의 없지만 PS로는 적절한거같기도 합니다.
 [RBTree님의 글](http://www.secmem.org/blog/2020/07/19/RSA-Puzzles/)에 몇몇 풀이 접근방식이 있습니다. 거의 정수론문제라고 봐도 무방합니다.
-
